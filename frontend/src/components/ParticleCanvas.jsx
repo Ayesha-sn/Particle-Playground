@@ -493,11 +493,11 @@ export const ParticleCanvas = () => {
           </li>
           <li className="flex items-start gap-2">
             <span className="text-primary mt-0.5">•</span>
-            <span>Particles attract and repel each other</span>
+            <span>Particles slowly change colors over time</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-primary mt-0.5">•</span>
-            <span>Watch them bounce off the edges!</span>
+            <span>Try different behavior modes for unique effects!</span>
           </li>
         </ul>
       </div>
