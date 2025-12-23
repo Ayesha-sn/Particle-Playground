@@ -38,7 +38,7 @@ function App() {
       <ParticleCanvas />
       
       {/* Footer Info */}
-      <div className="absolute bottom-6 left-6 z-10 text-xs text-muted-foreground font-mono bg-card/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-border/30">
+      <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-10 text-xs text-muted-foreground font-mono bg-card/50 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg border border-border/30">
         Built with HTML5 Canvas & React
       </div>
     </div>
