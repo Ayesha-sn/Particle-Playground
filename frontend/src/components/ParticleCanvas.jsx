@@ -137,7 +137,7 @@ class Particle {
    * Draw particle with glow effect
    */
   draw(ctx) {
-    const { h, s, l } = this.baseColor;
+    const { h, s, l } = this.getCurrentColor();
     
     // Outer glow
     ctx.beginPath();
