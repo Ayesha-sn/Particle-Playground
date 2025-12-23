@@ -308,7 +308,7 @@ export const ParticleCanvas = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [particleCount, mouseInfluence, particleInteraction]);
+  }, [particleCount, mouseInfluence, particleInteraction, behaviorMode]);
   
   /**
    * Handle mouse move
