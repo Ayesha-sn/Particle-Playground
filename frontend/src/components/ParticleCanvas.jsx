@@ -385,18 +385,18 @@ export const ParticleCanvas = () => {
       </div>
       
       {/* Instructions */}
-      <div className="absolute bottom-6 right-6 z-10 bg-card/80 backdrop-blur-md border border-border rounded-xl p-6 shadow-elevated max-w-sm">
-        <h3 className="text-lg font-semibold mb-3" style={{ color: 'hsl(var(--accent))' }}>
+      <div className="absolute bottom-6 right-4 md:right-6 z-10 bg-card/80 backdrop-blur-md border border-border rounded-xl p-4 md:p-6 shadow-elevated max-w-[calc(100vw-2rem)] md:max-w-sm">
+        <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3" style={{ color: 'hsl(var(--accent))' }}>
           How to Interact
         </h3>
-        <ul className="space-y-2 text-sm text-muted-foreground">
+        <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="text-primary mt-0.5">•</span>
-            <span>Move your mouse to push particles away</span>
+            <span>Move your mouse/finger to push particles away</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-primary mt-0.5">•</span>
-            <span>Click anywhere to add a cluster of particles</span>
+            <span>Tap/click anywhere to add a cluster of particles</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-primary mt-0.5">•</span>
