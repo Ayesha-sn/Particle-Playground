@@ -23,10 +23,18 @@ class Particle {
     ];
     
     this.baseColor = colors[Math.floor(Math.random() * colors.length)];
+    this.targetColor = colors[Math.floor(Math.random() * colors.length)];
+    this.colorTransitionProgress = 0;
+    this.colorTransitionSpeed = Math.random() * 0.002 + 0.001; // Slow color transition
     this.opacity = Math.random() * 0.5 + 0.5;
     
     // For attraction/repulsion
     this.mass = this.radius;
+    
+    // For orbital behavior
+    this.angle = Math.random() * Math.PI * 2;
+    this.orbitRadius = Math.random() * 100 + 50;
+    this.orbitSpeed = (Math.random() - 0.5) * 0.02;
   }
   
   /**
