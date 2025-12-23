@@ -321,8 +321,8 @@ export const ParticleCanvas = () => {
       />
       
       {/* Control Panel */}
-      <div className="absolute top-6 left-6 z-10 bg-card/80 backdrop-blur-md border border-border rounded-xl p-6 shadow-elevated">
-        <h2 className="text-xl font-semibold mb-4" style={{ color: 'hsl(var(--primary))' }}>
+      <div className="absolute top-6 left-4 md:left-6 z-10 bg-card/80 backdrop-blur-md border border-border rounded-xl p-4 md:p-6 shadow-elevated max-w-[calc(100vw-2rem)] md:max-w-none">
+        <h2 className="text-lg md:text-xl font-semibold mb-3 md:mb-4" style={{ color: 'hsl(var(--primary))' }}>
           Controls
         </h2>
         
