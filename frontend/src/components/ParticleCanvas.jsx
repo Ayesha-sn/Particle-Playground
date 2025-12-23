@@ -38,9 +38,75 @@ class Particle {
   }
   
   /**
+   * Update color transition
+   */
+  updateColor() {
+    this.colorTransitionProgress += this.colorTransitionSpeed;
+    
+    // When transition completes, pick a new target color
+    if (this.colorTransitionProgress >= 1) {
+      this.baseColor = this.getCurrentColor();
+      
+      const colors = [
+        { h: 180, s: 100, l: 50 },  // Cyan
+        { h: 280, s: 85, l: 60 },   // Purple
+        { h: 140, s: 100, l: 50 },  // Green
+        { h: 320, s: 100, l: 60 },  // Pink
+        { h: 55, s: 100, l: 60 },   // Yellow
+        { h: 210, s: 100, l: 60 },  // Blue
+      ];
+      
+      this.targetColor = colors[Math.floor(Math.random() * colors.length)];
+      this.colorTransitionProgress = 0;
+    }
+  }
+  
+  /**
+   * Get current interpolated color
+   */
+  getCurrentColor() {
+    const t = this.colorTransitionProgress;
+    
+    // Interpolate between base and target color
+    const h = this.baseColor.h + (this.targetColor.h - this.baseColor.h) * t;
+    const s = this.baseColor.s + (this.targetColor.s - this.baseColor.s) * t;
+    const l = this.baseColor.l + (this.targetColor.l - this.baseColor.l) * t;
+    
+    return { h, s, l };
+  }
+  
+  /**
    * Update particle position and handle edge bouncing
    */
-  update() {
+  update(behavior = 'default') {
+    // Update color transition
+    this.updateColor();
+    
+    if (behavior === 'orbital') {
+      // Orbital behavior - particles orbit around their spawn point
+      this.angle += this.orbitSpeed;
+      const targetX = this.canvas.width / 2 + Math.cos(this.angle) * this.orbitRadius;
+      const targetY = this.canvas.height / 2 + Math.sin(this.angle) * this.orbitRadius;
+      
+      this.vx = (targetX - this.x) * 0.05;
+      this.vy = (targetY - this.y) * 0.05;
+    } else if (behavior === 'flow') {
+      // Flow behavior - particles flow in wave patterns
+      const time = Date.now() * 0.001;
+      const flowX = Math.sin(this.y * 0.01 + time) * 0.5;
+      const flowY = Math.cos(this.x * 0.01 + time) * 0.5;
+      
+      this.vx += flowX * 0.1;
+      this.vy += flowY * 0.1;
+    } else if (behavior === 'chaos') {
+      // Chaos behavior - random directional changes
+      if (Math.random() < 0.02) {
+        this.vx += (Math.random() - 0.5) * 2;
+        this.vy += (Math.random() - 0.5) * 2;
+      }
+    }
+    // 'default' behavior uses existing velocity
+    
     this.x += this.vx;
     this.y += this.vy;
     
