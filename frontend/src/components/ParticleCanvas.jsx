@@ -449,6 +449,24 @@ export const ParticleCanvas = () => {
             </button>
           </div>
           
+          {/* Behavior Mode Selector */}
+          <div>
+            <label className="text-sm text-muted-foreground block mb-2">
+              Behavior Mode
+            </label>
+            <select
+              value={behaviorMode}
+              onChange={(e) => setBehaviorMode(e.target.value)}
+              className="w-full px-3 py-2 rounded-lg bg-muted text-foreground border border-border focus:border-primary focus:outline-none transition-colors text-sm font-medium"
+              style={{ accentColor: 'hsl(var(--primary))' }}
+            >
+              <option value="default">Default - Free Movement</option>
+              <option value="orbital">Orbital - Circular Motion</option>
+              <option value="flow">Flow - Wave Patterns</option>
+              <option value="chaos">Chaos - Random Bursts</option>
+            </select>
+          </div>
+          
           {/* Reset Button */}
           <button
             onClick={handleReset}
