@@ -168,6 +168,7 @@ export const ParticleCanvas = () => {
   const [particleCount, setParticleCount] = useState(150);
   const [mouseInfluence, setMouseInfluence] = useState(150);
   const [particleInteraction, setParticleInteraction] = useState(true);
+  const [behaviorMode, setBehaviorMode] = useState('default');
   
   /**
    * Initialize canvas and particles
