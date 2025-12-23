@@ -292,7 +292,7 @@ export const ParticleCanvas = () => {
       
       // Update and draw all particles
       particlesRef.current.forEach(particle => {
-        particle.update();
+        particle.update(behaviorMode);
         particle.draw(ctx);
       });
       
